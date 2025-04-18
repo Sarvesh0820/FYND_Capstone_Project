@@ -12,7 +12,7 @@ const NewArrivals = () => {
     
   return (
       <>
-          <div className='my-10'> 
+          <div  className='my-10'> 
               <h2 className='text-gray-400 text-center py-6 text-5xl'>New <span className='text-gray-600'>Arrivals</span></h2>
               
               <div className='grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-5 gap-4 gap-y-6 '>

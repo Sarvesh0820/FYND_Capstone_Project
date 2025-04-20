@@ -30,12 +30,11 @@ const productSchema = new mongoose.Schema({
         required: true
     },
     bestSellers: {
-        type: Boolean,
-        default: false
+        type: Boolean
     },
     date: {
         type: Number,
-        resquired: true
+        required: true
     }
 
 })

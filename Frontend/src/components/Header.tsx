@@ -7,7 +7,17 @@ const Header = () => {
   return (
     <div className=' flex items-center justify-between py-2 font-medium '>
       <Link to="/">
-        <img src={assets.logo} alt="Shopwise" className='w-24' />
+        <h1 className="text-4xl sm:text-5xl font-extrabold tracking-wide uppercase text-yellow-500 bg-clip-text text-transparent drop-shadow-lg flex gap-[2px]">
+  {'Shopwise'.split('').map((letter, index) => (
+    <span
+      key={index}
+      className={`inline-block animate-wave`}
+      style={{ animationDelay: `${index * 0.1}s` }}
+    >
+      {letter}
+    </span>
+  ))}
+</h1>
       </Link> 
       <div className='flex items-center gap-6'>
         <img src={assets.search} alt="search" className='w-5 cursor-text' />

@@ -21,7 +21,7 @@ const ScrollToTop = () => {
       <div className="w-full flex justify-center my-8">
         <button
           onClick={handleClick}
-          className="bg-black text-white px-4 py-2 rounded-full shadow-md hover:bg-gray-800 transition-all"
+          className="bg-pink-200 text-gray-600 px-4 py-2 rounded-full shadow-md hover:bg-pink-400 transition-all"
         >
           ↑ Scroll to Top
         </button>

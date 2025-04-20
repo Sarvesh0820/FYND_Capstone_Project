@@ -14,7 +14,9 @@ const Footer = () => {
 
         {/* Logo & Description */}
         <div className="md:w-1/3 flex flex-col gap-3">
-          <img src={assets.logo} alt="Shopwise" className="w-36 h-auto" />
+          <h2 className="text-4xl sm:text-5xl font-extrabold tracking-wide uppercase text-yellow-500 bg-clip-text text-transparent drop-shadow-lg">
+          Shopwise
+        </h2>
           <p className="text-sm text-gray-400 max-w-sm mt-2">
             Discover the latest trends in fashion for men and women, all in one place.
           </p>
@@ -48,16 +50,16 @@ const Footer = () => {
 
         {/* Newsletter */}
         <div className="md:w-1/3 max-w-sm">
-          <h3 className="text-gray-500font-semibold mb-3">Stay in Touch</h3>
+          <h3 className="text-gray-500 font-semibold mb-3">Stay in Touch</h3>
           <p className="text-sm mb-4 text-gray-400">Get updates about new collections and offers.</p>
           <form onSubmit={onSubmitHandler} className="flex w-full">
             <input
               type="email"
               required
               placeholder="Enter your email"
-              className="flex-1 px-3 py-2 rounded-l bg-gray-800 text-white text-sm outline-none"
+              className="flex-1 px-3 py-2 rounded-l bg-gray-200 text-gray-600 text-sm outline-none"
             />
-            <button className="bg-pink-300 hover:bg-pink-500 px-4 py-2 rounded-r text-sm text-white transition-all">
+            <button className="bg-pink-200 hover:bg-pink-400 px-4 py-2 rounded-r text-sm text-gray-600 transition-all">
               Subscribe
             </button>
           </form>

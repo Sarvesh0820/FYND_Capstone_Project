@@ -31,7 +31,7 @@ const loginUser = async (req, res) => {
 
 }
 
-// toute for register user
+// route for register user
 const registerUser = async (req, res) => {
     try {
         const { name, email, password } = req.body

@@ -14,7 +14,7 @@ const Footer = () => {
 
         {/* Logo & Description */}
         <div className="md:w-1/3 flex flex-col gap-3">
-          <h2 className="text-4xl sm:text-5xl font-extrabold tracking-wide uppercase text-yellow-500 bg-clip-text text-transparent drop-shadow-lg">
+          <h2 className="text-3xl sm:text-4xl font-extrabold tracking-wide uppercase text-yellow-500 bg-clip-text text-transparent drop-shadow-lg">
           Shopwise
         </h2>
           <p className="text-sm text-gray-400 max-w-sm mt-2">

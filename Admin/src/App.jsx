@@ -18,47 +18,47 @@ const App = () => {
   }, [token])
 
   return (
-    // <div className='bg-gray-800 min-h-screen'>
-    //   <ToastContainer/>
-    //   {token === "" ? <Login setToken={setToken} /> :
-    //     <>
-    //       <Header setToken={setToken} />
-    //       <div className='flex w-full text-gray-400'>
-    //         <Sidebar />
-    //         <div className='w-[70%] mx-auto ml-[max(5vw, 25px)]my-8 text-gray-600 text-base'>
-    //           <Routes>
-    //             <Route path='/add' element={<Add token ={token} />} />
-    //             <Route path='/list' element={<List token ={token} />} />
-    //             <Route path='/orders' element={<Orders token ={token}/>} />
-    //           </Routes>
+    <div className='bg-gray-500 min-h-screen'>
+      <ToastContainer/>
+      {token === "" ? <Login setToken={setToken} /> :
+        <>
+          <Header setToken={setToken} />
+          <div className='flex w-full'>
+            <Sidebar />
+            <div className='w-[70%] mx-auto ml-[max(5vw, 25px)]my-8 text-gray-600 text-base'>
+              <Routes>
+                <Route path='/add' element={<Add token ={token} />} />
+                <Route path='/list' element={<List token ={token} />} />
+                <Route path='/orders' element={<Orders token ={token}/>} />
+              </Routes>
 
-    //         </div>
-    //       </div>
-    //     </>
-    //   }
+            </div>
+          </div>
+        </>
+      }
       
-    // </div>
+    </div>
 
-    <div className="bg-gray-800 min-h-screen text-gray-500">
-  <ToastContainer />
-  {token === "" ? (
-    <Login setToken={setToken} />
-  ) : (
-    <>
-      <Header setToken={setToken} />
-      <div className="flex w-full">
-        <Sidebar />
-        <div className="w-full md:w-[75%] ml-[max(5vw,25px)] my-8 mr-4 bg-white rounded-xl shadow-lg p-6 text-gray-800 overflow-auto">
-          <Routes>
-            <Route path="/add" element={<Add token={token} />} />
-            <Route path="/list" element={<List token={token} />} />
-            <Route path="/orders" element={<Orders token={token} />} />
-          </Routes>
-        </div>
-      </div>
-    </>
-  )}
-</div>
+//     <div className="bg-gray-800 min-h-screen text-gray-500">
+//   <ToastContainer />
+//   {token === "" ? (
+//     <Login setToken={setToken} />
+//   ) : (
+//     <>
+//       <Header setToken={setToken} />
+//       <div className="flex w-full">
+//         <Sidebar />
+//         <div className="w-full md:w-[75%] ml-[max(5vw,25px)] my-8 m-4 bg-white rounded-xl shadow-lg p-6 text-gray-800 overflow-auto">
+//           <Routes>
+//             <Route path="/add" element={<Add token={token} />} />
+//             <Route path="/list" element={<List token={token} />} />
+//             <Route path="/orders" element={<Orders token={token} />} />
+//           </Routes>
+//         </div>
+//       </div>
+//     </>
+//   )}
+// </div>
   )
 }
 

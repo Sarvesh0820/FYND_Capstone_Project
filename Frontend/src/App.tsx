@@ -7,11 +7,13 @@ import Contact from "./pages/Contact"
 import Login from "./pages/Login"
 import OrderPlace from "./pages/OrderPlace"
 import Collections from "./pages/Collections"
-import Product from "./components/Product"
+import Product from "./pages/Product"
 import Orders from "./pages/Orders"
 import Header from "./components/Header"
 import Footer from "./components/Footer"
 import ScrollToTop from "./components/ScrollToTop"
+import SearchBar from "./components/SearchBar"
+import { ToastContainer, toast } from 'react-toastify';
 
 function App() {
   
@@ -20,7 +22,9 @@ function App() {
     <>
       <Suspense fallback={<div>Loading...</div>}>
         <div className="px-4 sm:px-[5vw] md:px-[7vw] lg:px-[9vw]">
-          <Header/>
+          <ToastContainer/>
+          <Header />
+          <SearchBar/>
         <Routes>
             <Route path="/" element={<Home/>}></Route>
             <Route path="/collections" element={<Collections/>}></Route>

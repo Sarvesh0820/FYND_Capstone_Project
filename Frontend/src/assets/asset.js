@@ -106,7 +106,8 @@ import logo from "./shopwise_resized_249x71.png"
 import search from "./search_icon.png"
 import menu from "./menu_icon.png"
 import hero from "./hero.png"
-
+import stripe from "./stripe_logo.png"
+import about from "./about.png"
 
 export const assets = {
     bin,
@@ -118,7 +119,11 @@ export const assets = {
     search,
     profile,
     menu,
-    hero
+    hero,
+    stard,
+    start,
+    stripe,
+    about
 }
 "Lux Cozi Men's Cotton Regular Fit Polo T-Shirt"
 export const products = [
@@ -129,7 +134,7 @@ export const products = [
         price: 349,
         image: [img1,img2,img3,img4],
         category: "Men",
-        subCategory: "Tshirt",
+        subCategory: "Topwear",
         sizes: ["S", "M", "L", "XL"],
         date: Date.now(),
         bestSeller: true
@@ -141,7 +146,7 @@ export const products = [
         price: 449,
         image: [img5,img6,img7,img8],
         category: "Men",
-        subCategory: "Tshirt",
+        subCategory: "Topwear",
         sizes: ["S", "M", "L", "XL"],
         date: Date.now(),
         bestSeller: true
@@ -153,7 +158,7 @@ export const products = [
         price: 699,
         image: [img9,img10,img11,img12],
         category: "Men",
-        subCategory: "Tshirt",
+        subCategory: "Topwear",
         sizes: ["S", "M", "L", "XL"],
         date: Date.now(),
         bestSeller: false
@@ -165,7 +170,7 @@ export const products = [
         price: 579,
         image: [img13,img14,img15,img16],
         category: "Men",
-        subCategory: "Tshirt",
+        subCategory: "Topwear",
         sizes: ["S", "M", "L", "XL"],
         date: Date.now(),
         bestSeller: false
@@ -177,7 +182,7 @@ export const products = [
         price: 549,
         image: [img17,img18,img19,img20],
         category: "Men",
-        subCategory: "Shirt",
+        subCategory: "Topwear",
         sizes: ["S", "M", "L", "XL"],
         date: Date.now(),
         bestSeller: false
@@ -189,7 +194,7 @@ export const products = [
         description: "Earth’s most loved: Where the world sees trash, we saw a chance to turn trash into fashion. This shirt for men, has recycled polyester made from plastic bottles disposed in the oceans.",
         image: [img21,img22,img23,img24],
         category: "Men",
-        subCategory: "Shirt",
+        subCategory: "Topwear",
         sizes: ["S", "M", "L", "XL"],
         date: Date.now(),
         bestSeller: true
@@ -201,7 +206,7 @@ export const products = [
         description: "Allen solly Mens Cotton Full sleeve Overdyed shirts with contrast logo",
         image: [img25,img26,img27,img28],
         category: "Men",
-        subCategory: "Shirt",
+        subCategory: "Topwear",
         sizes: ["S", "M", "L", "XL"],
         date: Date.now(),
         bestSeller: true
@@ -213,7 +218,7 @@ export const products = [
         description: "Dennis Lingo Men's Cotton Solid Casual Shirt",
         image: [img29,img30,img31],
         category: "Men",
-        subCategory: "Shirt",
+        subCategory: "Topwear",
         sizes: ["S", "M", "L", "XL"],
         date: Date.now(),
         bestSeller: true
@@ -225,7 +230,7 @@ export const products = [
         description: "The perfect companion for every occasion, this pair of Jeans by Louis Philippe is a must have for you.",
         image: [img32,img33,img34,img35],
         category: "Men",
-        subCategory: "Jeans",
+        subCategory: "Bottomwear",
         sizes: ["28", "30", "32", "34"],
         date: Date.now(),
         bestSeller: false
@@ -237,7 +242,7 @@ export const products = [
         description: "Introducing Ben Martin's Men's Baggy Jeans (Loose, Oversized, Boyfriend Jeans For Men). Designed for modern comfort and style.",
         image: [img36,img37,img38,img39],
         category: "Men",
-        subCategory: "Jeans",
+        subCategory: "Bottomwear",
         sizes: ["28", "30", "32", "34"],
         date: Date.now(),
         bestSeller: true
@@ -249,7 +254,7 @@ export const products = [
         price: 699,
         image: [img40,img41,img42,img43],
         category: "Men",
-        subCategory: "Jeans",
+        subCategory: "Bottomwear",
         sizes: ["28", "30", "32", "34"],
         date: Date.now(),
         bestSeller: true
@@ -261,7 +266,7 @@ export const products = [
         price: 799,
         image: [img44,img45,img46,img47],
         category: "Men",
-        subCategory: "Jeans",
+        subCategory: "Bottomwear",
         sizes: ["28", "30", "32", "34"],
         date: Date.now(),
         bestSeller: false
@@ -273,7 +278,7 @@ export const products = [
         price: 399,
         image: [img48,img49,img50,img51],
         category: "Women",
-        subCategory: "Tshirt",
+        subCategory: "Topwear",
         sizes: ["S", "M", "L", "XL"],
         date: Date.now(),
         bestSeller: true
@@ -285,7 +290,7 @@ export const products = [
         price: 269,
         image: [img52,img53,img54,img55],
         category: "Women",
-        subCategory: "Tshirt",
+        subCategory: "Topwear",
         sizes: ["S", "M", "L", "XL"],
         date: Date.now(),
         bestSeller: true
@@ -297,7 +302,7 @@ export const products = [
         price: 242,
         image: [img56,img57,img58],
         category: "Women",
-        subCategory: "Tshirt",
+        subCategory: "Topwear",
         sizes: ["S", "M", "L", "XL"],
         date: Date.now(),
         bestSeller: false
@@ -309,7 +314,7 @@ export const products = [
         price: 329,
         image: [img59,img60,img61,img62],
         category: "Women",
-        subCategory: "Tshirt",
+        subCategory: "Topwear",
         sizes: ["S", "M", "L", "XL"],
         date: Date.now(),
         bestSeller: true
@@ -321,7 +326,7 @@ export const products = [
         price: 399,
         image: [img63,img64,img65,img66],
         category: "Women",
-        subCategory: "Shirt",
+        subCategory: "Topwear",
         sizes: ["S", "M", "L", "XL"],
         date: Date.now(),
         bestSeller: true
@@ -333,7 +338,7 @@ export const products = [
         price: 389,
         image: [img67,img68,img69,img70],
         category: "Women",
-        subCategory: "Shirt",
+        subCategory: "Topwear",
         sizes: ["S", "M", "L", "XL"],
         date: Date.now(),
         bestSeller: false
@@ -345,7 +350,7 @@ export const products = [
         price:284,
         image: [img71,img72,img73,img74],
         category: "Women",
-        subCategory: "Shirt",
+        subCategory: "Topwear",
         sizes: ["S", "M", "L", "XL"],
         date: Date.now(),
         bestSeller: true
@@ -357,7 +362,7 @@ export const products = [
         price: 449,
         image: [img75,img76,img77,img78],
         category: "Women",
-        subCategory: "Shirt",
+        subCategory: "Topwear",
         sizes: ["S", "M", "L", "XL"],
         date: Date.now(),
         bestSeller: true
@@ -369,7 +374,7 @@ export const products = [
         price: 1999,
         image: [img79,img80,img81,img82],
         category: "Women",
-        subCategory: "Jeans",
+        subCategory: "Bottomwear",
         sizes: ["28", "30", "32", "34"],
         date: Date.now(),
         bestSeller: true
@@ -381,7 +386,7 @@ export const products = [
         price: 482,
         image: [img83,img84,img85,img86],
         category: "Women",
-        subCategory: "Jeans",
+        subCategory: "Bottomwear",
         sizes: ["28", "30", "32", "34"],
         date: Date.now(),
         bestSeller: false
@@ -393,7 +398,7 @@ export const products = [
         price: 749,
         image: [img87,img88,img89,img90],
         category: "Women",
-        subCategory: "Jeans",
+        subCategory: "Bottomwear",
         sizes: ["28", "30", "32", "34"],
         date: Date.now(),
         bestSeller: false
@@ -405,7 +410,7 @@ export const products = [
         price: 699,
         image: [img91,img92,img93,img94],
         category: "Women",
-        subCategory: "Jeans",
+        subCategory: "Bottomwear",
         sizes: ["28", "30", "32", "34"],
         date: Date.now(),
         bestSeller: true

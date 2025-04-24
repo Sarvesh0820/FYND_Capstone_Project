@@ -1,4 +1,5 @@
 import React from 'react'
+import {Link} from "react-router-dom"
 import hero from "../assets/hero.png"
 
 const Hero = () => {
@@ -28,7 +29,15 @@ const Hero = () => {
 
       </div> */}
 
-        <img src={hero} alt="New Arrivals Banner" className="w-full object-cover" />
+      {/* <img src={hero} alt="New Arrivals Banner" className="w-full object-cover" /> */}
+      
+      <Link to="/collections">
+  <img
+    src={hero}
+    alt="New Arrivals Banner"
+    className="w-full object-cover cursor-pointer"
+  />
+</Link>
         
       </>
   )

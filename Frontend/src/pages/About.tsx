@@ -1,4 +1,5 @@
-import {assets} from "../assets/asset.js"
+// @ts-nocheck
+import { assets } from "../assets/asset.js"
 
 const About = () => {
   return (

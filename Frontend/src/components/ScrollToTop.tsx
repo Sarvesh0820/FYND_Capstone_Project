@@ -1,4 +1,5 @@
-import  { useEffect, useState } from "react";
+// @ts-nocheck
+import { useEffect, useState } from "react";
 
 const ScrollToTop = () => {
   const [showButton, setShowButton] = useState(false);

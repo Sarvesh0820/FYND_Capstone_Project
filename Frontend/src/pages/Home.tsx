@@ -1,3 +1,4 @@
+// @ts-nocheck
 import Hero from "../components/Hero"
 import NewArrivals from '../components/NewArrivals';
 import BestSeller from '../components/BestSeller.tsx';

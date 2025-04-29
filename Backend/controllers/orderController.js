@@ -49,7 +49,6 @@ const placeOrder = async (req, res) => {
 // placing orders  using razorpay
 
 const placeOrderRazor = async (req, res) => {
-    res.set('Access-Control-Allow-Origin', '*');
     try {
         const { userId, amount, items, address } = req.body
         
@@ -95,7 +94,6 @@ const placeOrderRazor = async (req, res) => {
 }
 
 const verifyRazorpay = async (req, res) => {
-    res.set('Access-Control-Allow-Origin', '*');
     try {
         const { userId, razorpay_order_id } = req.body
         const orderInfo = await razorpayInstance.orders.fetch(razorpay_order_id)

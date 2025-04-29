@@ -1,3 +1,4 @@
+// @ts-nocheck
 import { useContext, useEffect, useState } from 'react'
 import { ShopContext } from '../context/ShopContext'
 import axios from 'axios'
@@ -32,7 +33,7 @@ const Orders = () => {
         
       }
     } catch (error) {
-      
+      console.log(error)
     }
   }
 

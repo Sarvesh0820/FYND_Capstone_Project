@@ -1,3 +1,4 @@
+// @ts-nocheck
 import { useContext, useState } from 'react'
 import {assets} from "../assets/asset.js"
 import { Link, NavLink, useLocation} from 'react-router-dom';

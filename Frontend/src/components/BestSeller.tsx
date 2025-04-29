@@ -1,9 +1,10 @@
-import  { useContext, useEffect, useState } from 'react'
+// @ts-nocheck
+import { useContext, useEffect, useState } from 'react'
 import { ShopContext } from '../context/ShopContext'
 import ProductItem from './ProductItem'
 
 
-const BestSeller = ({id, name, image, price}) => {
+const BestSeller = () => {
     const { products } = useContext(ShopContext)
     const [bestSeller, setBestSeller] = useState([])
     

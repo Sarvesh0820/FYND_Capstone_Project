@@ -1,4 +1,4 @@
-import {Link} from "react-router-dom"
+import { Link } from "react-router-dom"
 import hero from "../assets/hero.png"
 
 const Hero = () => {

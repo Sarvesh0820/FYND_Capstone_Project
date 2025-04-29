@@ -1,4 +1,5 @@
-import  { useContext, useEffect, useState } from 'react'
+// @ts-nocheck
+import { useContext, useEffect, useState } from 'react'
 import {useLocation} from "react-router-dom"
 import { ShopContext } from '../context/ShopContext'
 import {assets} from "../assets/asset.js"

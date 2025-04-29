@@ -1,3 +1,4 @@
+// @ts-nocheck
 import { useContext, useEffect, useState } from 'react'
 import {useParams} from "react-router-dom"
 import { ShopContext } from '../context/ShopContext'

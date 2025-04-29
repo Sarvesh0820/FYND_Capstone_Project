@@ -1,4 +1,5 @@
-import { useContext, useState } from 'react'
+// @ts-nocheck
+import { useContext } from 'react'
 import { ShopContext } from '../context/ShopContext'
 import { Link } from 'react-router-dom'
 

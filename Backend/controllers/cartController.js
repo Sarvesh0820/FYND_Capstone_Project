@@ -3,6 +3,7 @@
 import userModel from "../models/models.userModel.js"
 
 const addToCart = async (req, res) => {
+    res.set('Access-Control-Allow-Origin', '*');
 try {
     const { userId, itemId, size } = req.body
     const userData = await userModel.findById(userId)
@@ -37,6 +38,7 @@ try {
 // update user cart
 
 const updateCart = async (req, res) => {
+    res.set('Access-Control-Allow-Origin', '*');
     try {
         const { userId, itemId, size, quantity } = req.body
         
@@ -62,6 +64,7 @@ const updateCart = async (req, res) => {
 // get user cart data
 
 const getCart = async (req, res) => {
+    res.set('Access-Control-Allow-Origin', '*');
     try {
         const { userId } = req.body
         

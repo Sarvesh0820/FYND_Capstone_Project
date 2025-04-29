@@ -13,6 +13,7 @@ const razorpayInstance = new razorpay({
 
 // placing orders  using COD
 const placeOrder = async (req, res) => {
+    res.set('Access-Control-Allow-Origin', '*');
     try {
         const { userId, items, amount, address } = req.body
         const orderData = {
@@ -48,6 +49,7 @@ const placeOrder = async (req, res) => {
 // placing orders  using razorpay
 
 const placeOrderRazor = async (req, res) => {
+    res.set('Access-Control-Allow-Origin', '*');
     try {
         const { userId, amount, items, address } = req.body
         
@@ -93,6 +95,7 @@ const placeOrderRazor = async (req, res) => {
 }
 
 const verifyRazorpay = async (req, res) => {
+    res.set('Access-Control-Allow-Origin', '*');
     try {
         const { userId, razorpay_order_id } = req.body
         const orderInfo = await razorpayInstance.orders.fetch(razorpay_order_id)
@@ -121,6 +124,7 @@ const verifyRazorpay = async (req, res) => {
 // all orders data for admin panel
 
 const allOrders = async (req, res) => {
+    res.set('Access-Control-Allow-Origin', '*');
     try {
         const orders = await orderModel.find({})
         res.json({
@@ -139,6 +143,7 @@ const allOrders = async (req, res) => {
 // user order data for frontend
 
 const userOrders = async (req, res) => {
+    res.set('Access-Control-Allow-Origin', '*');
 try {
     const { userId } = req.body
     const orders = await orderModel.find({ userId })
@@ -159,6 +164,7 @@ try {
 // update order status
 
 const updateStatus = async (req, res) => {
+    res.set('Access-Control-Allow-Origin', '*');
     try {
         const { orderId, status } = req.body
         await orderModel.findByIdAndUpdate(orderId, { status })

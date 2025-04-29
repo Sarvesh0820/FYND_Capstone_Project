@@ -8,6 +8,7 @@ const createToken = (id) => {
 }
 // route for user login
 const loginUser = async (req, res) => {
+    res.set('Access-Control-Allow-Origin', '*');
     try {
         const { email, password } = req.body
 
@@ -42,6 +43,7 @@ const loginUser = async (req, res) => {
 
 // route for register user
 const registerUser = async (req, res) => {
+    res.set('Access-Control-Allow-Origin', '*');
     try {
         const { name, email, password } = req.body
         
@@ -96,6 +98,7 @@ const registerUser = async (req, res) => {
 
 // route for admin login
 const adminLogin = async (req, res) => {
+    res.set('Access-Control-Allow-Origin', '*');
     try {
         const { email, password } = req.body
         if (email === process.env.ADMIN_EMAIL && password === process.env.ADMIN_PASSWORD) {

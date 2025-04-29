@@ -2,6 +2,7 @@ import {v2 as cloudinary} from "cloudinary"
 import productModel from "../models/models.productModel.js"
 
 const addProduct = async (req, res) => {
+    res.set('Access-Control-Allow-Origin', '*');
     try {
         const { name, description, price, category, subCategory, sizes, bestSeller, image } = req.body
         
@@ -51,6 +52,7 @@ const addProduct = async (req, res) => {
 }
 
 const removeProduct = async (req, res) => {
+    res.set('Access-Control-Allow-Origin', '*');
     try {
         await productModel.findByIdAndDelete(req.body.id)
         res.json({
@@ -67,6 +69,7 @@ const removeProduct = async (req, res) => {
 }
 
 const listProduct = async (req, res) => {
+    res.set('Access-Control-Allow-Origin', '*');
     try {
         const products = await productModel.find({})
         res.json({success: true,products})
@@ -81,7 +84,8 @@ const listProduct = async (req, res) => {
     
 }
 
-const singleProduct = async(req, res) => {
+const singleProduct = async (req, res) => {
+    res.set('Access-Control-Allow-Origin', '*');
     try {
         const product = await productModel.findById(req.body.id)
         res.json({

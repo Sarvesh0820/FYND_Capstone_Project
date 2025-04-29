@@ -7,8 +7,8 @@ const NewArrivals = () => {
     const [newArrival, setNewArrival] = useState([])
     
     useEffect(() => {
-        setNewArrival(products.slice(0,10))
-    },[])
+        setNewArrival(products.slice(0,10).reverse())
+    },[products])
     
   return (
       <>

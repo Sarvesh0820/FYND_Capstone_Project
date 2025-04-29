@@ -35,11 +35,17 @@ const addProduct = async (req, res) => {
           
         const product = await new productModel(productData)
         await product.save()
-        res.status(201).json({message: "Product Uploaded Successfully"})
+        res.json({
+            success: true,
+            message: "Product Uploaded Successfully"
+        })
       
     } catch (error) {
-        console.error(error)
-        res.status(500).json({message: "Failed to Upload Product"})
+        console.log(error)
+        res.json({
+            success: false,
+            message: "Failed to Upload Product"
+        })
   }
     
 }
@@ -47,20 +53,29 @@ const addProduct = async (req, res) => {
 const removeProduct = async (req, res) => {
     try {
         await productModel.findByIdAndDelete(req.body.id)
-        res.status(200).json({message: "Product Removed Successfully"})
+        res.json({
+            success: true,
+            message: "Product Removed Successfully"
+        })
     } catch (error) {
         console.error(error)
-        res.status(500).json({message: "Failed to Remove Product"})
+        res.json({
+            success: false,
+            message: "Failed to Remove Product"
+        })
     }
 }
 
 const listProduct = async (req, res) => {
     try {
         const products = await productModel.find({})
-        res.status(200).json(products)
+        res.json({success: true,products})
     } catch (error) {
         console.error(error)
-        res.status(500).json({message: "Failed to Get Products"})
+        res.json({
+            success: false,
+            message: "Failed to Get Products"
+        })
         
     }
     
@@ -69,11 +84,17 @@ const listProduct = async (req, res) => {
 const singleProduct = async(req, res) => {
     try {
         const product = await productModel.findById(req.body.id)
-        res.status(200).json({ message: "Product Found",product })
+        res.json({
+            success: true,
+            message: "Product Found", product
+        })
         
     } catch (error) {
         console.error(error)
-        res.status(500).json({message: "Failed to Get Product"})
+        res.json({
+            success: false,
+            message: "Failed to Get Product"
+        })
     }
 }
 

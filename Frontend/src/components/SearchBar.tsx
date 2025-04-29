@@ -10,7 +10,7 @@ const SearchBar = () => {
     const location = useLocation()
 
     useEffect(() => {
-        if (location.pathname.includes('collections') && showSearch) {
+        if (location.pathname.includes('collections')) {
             setVisible(true)
         } else {
             setVisible(false)

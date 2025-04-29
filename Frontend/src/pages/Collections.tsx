@@ -2,6 +2,7 @@ import React, { useContext, useEffect, useState } from 'react'
 import { ShopContext } from '../context/ShopContext';
 import {assets} from "../assets/asset.js"
 import ProductItem from '../components/ProductItem';
+import { useLocation } from 'react-router-dom';
 
 const Collections = () => {
   const { products, search, showSearch } = useContext(ShopContext)
@@ -9,7 +10,9 @@ const Collections = () => {
   const [filterProducts, setFilterProducts] = useState([])
   const [category, setCategory] = useState([])
   const [subCategory, setSubCategory] = useState([])
-  const[sortType, setSortType] = useState("new arrivals")
+  const [sortType, setSortType] = useState("relevant")
+  
+
   
   const toggleCategory = (e) => {
     if (category.includes(e.target.value)) {
@@ -42,37 +45,71 @@ const Collections = () => {
     setFilterProducts(productsCopy)
   }
 
-  const sortProduct = () => {
-    let filterProductCopy = filterProducts.slice()
-    switch (sortType) {
-      case "low-high":
-        setFilterProducts(filterProductCopy.sort((a, b) => (a.price - b.price)));
-        break;
-      
-      case "high-low":
-        setFilterProducts(filterProductCopy.sort((a, b) => (b.price - a.price)));
-        break;
-      
-      case "bestSellers":
-        setFilterProducts(filterProductCopy.filter(item => item.bestSeller));
-        break;
-      
-      // case "new arrivals":
-      //   setFilterProducts(filterProductCopy.slice(0, 16));
-      //   break;
-      
-      default: applyFilter();
-        break;
-    }
+  const location = useLocation();
+
+useEffect(() => {
+  const params = new URLSearchParams(location.search);
+  console.log("Query Params:");
+  for (const [key, value] of params.entries()) {
+    console.log(`${key}: ${value}`);
   }
 
+  // Example usage
+  const cat = params.get("category");
+  const sub = params.get("subCategory");
+  const sort = params.get("sort");
+
+  // You can also log these specific values
+  console.log("category =", cat);
+  console.log("subCategory =", sub);
+  console.log("sort =", sort);
+}, [location.search]);
+
   useEffect(() => {
-    applyFilter()
-  }, [category, subCategory])
-  
-  useEffect(() => {
-    sortProduct()
-  },[sortType])
+  let filtered = products.slice();
+
+  // Category filter
+  if (category.length > 0) {
+    filtered = filtered.filter(item => category.includes(item.category));
+  }
+
+  // Subcategory filter
+  if (subCategory.length > 0) {
+    filtered = filtered.filter(item => subCategory.includes(item.subCategory));
+  }
+
+  // Search filter (add this block here 👇)
+  if (showSearch && search.trim() !== "") {
+    filtered = filtered.filter((item) => {
+      return search.toLowerCase() === '' ? item : item.name.toLowerCase().includes(search)
+    });
+    setFilterProducts(filtered)
+  }
+
+  // Sorting
+  switch (sortType) {
+    case "low-high":
+      filtered.sort((a, b) => a.price - b.price);
+      break;
+    case "high-low":
+      filtered.sort((a, b) => b.price - a.price);
+      break;
+    case "bestSellers":
+      filtered = filtered.filter(item => item.bestSeller);
+      break;
+    case "new arrivals":
+      filtered.reverse(); // or sort by item.createdAt if available
+      break;
+    
+    case "relevant":
+   // retain current filter order
+  break;
+    default:
+      break;
+  }
+
+  setFilterProducts(filtered);
+}, [category, subCategory, sortType, products, search, showSearch]);
   return (
     <>
       <div className='flex flex-col sm:flex-row gap-1 sm:gap-1 pt-10 border-t'>
@@ -105,7 +142,7 @@ const Collections = () => {
                 <input className='w-3' type="checkbox" value={'Bottomwear'} onChange={toggleSubCategory} /> Bottomwear
               </p>
               <p className='flex gap-2 '>
-                <input className='w-3' type="checkbox" value={'Accessories'} onChange={toggleSubCategory} /> Accessories
+                <input className='w-3' type="checkbox" value={'Accesories'} onChange={toggleSubCategory} /> Accesories
               </p>
             </div>
           </div>
@@ -116,6 +153,7 @@ const Collections = () => {
             <h2 className='text-gray-400 text-4xl'>All <span className='text-gray-600'>Collections</span></h2>
             {/* product sort */}
             <select onChange={(e) => setSortType(e.target.value)} className='border-2 border-gray-300 text-sm px-2'>
+              <option value="relevant">Sort by: Relevant</option>
               <option value="new arrivals">Sort by: New Arrivals</option>
               <option value="bestSellers">Sort by: Bestsellers</option>
               <option value="low-high">Sort by: Price Low to High</option>

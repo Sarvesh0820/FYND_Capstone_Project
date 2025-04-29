@@ -9,6 +9,7 @@ import Login from './components/Login'
 import {ToastContainer} from "react-toastify"
 
 export const backend_url = import.meta.env.VITE_BACKEND
+export const currency  = "₹"
 
 const App = () => {
   const [token, setToken] = useState(localStorage.getItem('token') ? localStorage.getItem('token') : '')
@@ -62,4 +63,4 @@ const App = () => {
   )
 }
 
-export default App
+export default App;

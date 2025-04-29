@@ -8,10 +8,9 @@ const BestSeller = ({id, name, image, price}) => {
     
     useEffect(() => {
         const prod = products.filter((item) => (item.bestSeller))
-        setBestSeller(prod)
+        setBestSeller(prod.slice(0,15))
 
-        console.log(prod)
-    },[])
+    },[products])
   return (
       <>
           <div className='my-10'>

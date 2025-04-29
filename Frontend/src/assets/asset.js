@@ -96,36 +96,28 @@ import bin from "./bin_icon.png"
 import cart from "./cart_icon.png"
 import cross from "./cross_icon.png"
 import drop from "./dropdown_icon.png"
-import exch from "./exchange_icon.png"
 import razor from "./razorpay_logo.png"
 import profile from "./profile_icon.png"
-import stard from "./star_dull_icon.png"
-import start from "./star_icon.png"
-import supp from "./support_img.png"
-import logo from "./shopwise_resized_249x71.png"
 import search from "./search_icon.png"
 import menu from "./menu_icon.png"
 import hero from "./hero.png"
-import stripe from "./stripe_logo.png"
 import about from "./about.png"
+import contact from "./contactImg.jpeg"
 
 export const assets = {
     bin,
     cart,
     cross,
     drop,
-    exch,
-    logo,
     search,
     profile,
     menu,
     hero,
-    stard,
-    start,
-    stripe,
-    about
+    about,
+    razor,
+    contact
 }
-"Lux Cozi Men's Cotton Regular Fit Polo T-Shirt"
+
 export const products = [
     {
         _id: "aaaaa",

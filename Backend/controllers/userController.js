@@ -4,7 +4,7 @@ import bcrypt from "bcryptjs/dist/bcrypt.js"
 import jwt from "jsonwebtoken"
 
 const createToken = (id) => {
-    jwt.sign({id}, process.env.JWT_SECRET)
+    return jwt.sign({id}, process.env.JWT_SECRET)
 }
 // route for user login
 const loginUser = async (req, res) => {
@@ -14,19 +14,28 @@ const loginUser = async (req, res) => {
         const user = await userModel.findOne({ email })
         
         if (!user) {
-            return res.status(404).json({ message: "User not found" })
+            return res.json({
+                success: false,
+                message: "User not found"
+            })
         }
 
         const isMatch = await bcrypt.compare(password, user.password)
         
         if (isMatch) {
             const token = createToken(user._id)
-            res.json({succes:true, token })
+            res.json({success:true, token })
         } else {
-            return res.status(400).json({ message: "Invalid password" })
+            return res.json({
+                success: false,
+                message: "Invalid password"
+            })
         }
     } catch (error) {
-         res.status(500).json({ message: "Error creating user" })
+        res.json({
+            success: false,
+            message: "Error creating user"
+        })
     }
 
 }
@@ -39,15 +48,22 @@ const registerUser = async (req, res) => {
         //if user already exists
         const exists = await userModel.findOne({email})
         if (exists) {
-            return res.status(400).json({ message: "User already exists" })
+            return res.json({
+                success: false,
+                message: "User already exists"
+            })
         }
 
         if (!validator.isEmail(email)) {
-            return res.status(400).json({ message: "Invalid email" })
+            return res.json({
+                success: false,
+                message: "Invalid email"
+            })
         }
 
         if (password.length < 6) {
-            return res.status(400).json({
+            return res.json({
+                success:false,
                 message: "Password must be at least 8 characters"
                 })
         }
@@ -65,9 +81,15 @@ const registerUser = async (req, res) => {
         const user = await newUser.save()
 
         const token = createToken(user._id)
-        res.status(201).json({ message: "User created successfully", token })
+        res.json({
+            success: true,
+            message: "User created successfully", token
+        })
     } catch (error) {
-        res.status(500).json({ message: "Error creating user" })
+        res.json({
+            success: false,
+            message: "Error creating user"
+        })
         }
         
 }
@@ -78,13 +100,16 @@ const adminLogin = async (req, res) => {
         const { email, password } = req.body
         if (email === process.env.ADMIN_EMAIL && password === process.env.ADMIN_PASSWORD) {
             const token = jwt.sign(email + password,process.env.JWT_SECRET)
-            res.status(200).json({token:token, message: "Admin logged in successfully",success: true })
+            res.json({success:true,token:token, message: "Admin logged in successfully",success: true })
         } else {
-            res.status(400).json({ message: "Invalid email or password" })
+            res.json({
+                success: false,
+                message: "Invalid email or password"
+            })
         }
     } catch (error) {
         console.error(error)
-        res.status(500).json({ message: "Error logging in admin" })
+        res.json({success:false, message: "Error logging in admin" })
     }
 
 }

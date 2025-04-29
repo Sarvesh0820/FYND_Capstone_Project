@@ -1,6 +1,7 @@
 import jwt from "jsonwebtoken"
 
 const adminAuth = (req, res, next) => {
+    res.set('Access-Control-Allow-Origin', '*');
     try {
         const { token } = req.headers
         if (!token) {

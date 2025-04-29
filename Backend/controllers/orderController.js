@@ -1,4 +1,3 @@
-
 import orderModel from "../models/models.orderModel.js"
 import userModel from "../models/models.userModel.js"
 import razorpay from "razorpay"
@@ -71,7 +70,7 @@ const placeOrderRazor = async (req, res) => {
             receipt: newOrder._id.toString()
         }
 
-        await razorpayInstance.orders.create(options, (error,order) => {
+        razorpayInstance.orders.create(options, (error,order) => {
             if (error) {
                 console.log(error)
                 return res.json({

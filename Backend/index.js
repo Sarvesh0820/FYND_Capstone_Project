@@ -19,7 +19,8 @@ app.use(cors({
     origin: [
         'http://localhost:5174',
         'http://localhost:5173',
-        'https://fynd-capstone-ecommerce-admin.vercel.app'
+        'https://fynd-capstone-ecommerce-admin.vercel.app',
+        'https://fynd-capstone-ecommerce-frontend.vercel.app'
     ],
     credentials: true,
 }));

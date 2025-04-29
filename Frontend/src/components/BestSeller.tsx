@@ -1,6 +1,7 @@
-import React, { useContext, useEffect, useState } from 'react'
+import  { useContext, useEffect, useState } from 'react'
 import { ShopContext } from '../context/ShopContext'
 import ProductItem from './ProductItem'
+
 
 const BestSeller = ({id, name, image, price}) => {
     const { products } = useContext(ShopContext)
@@ -30,4 +31,4 @@ const BestSeller = ({id, name, image, price}) => {
   )
 }
 
-export default BestSeller
+export default BestSeller;

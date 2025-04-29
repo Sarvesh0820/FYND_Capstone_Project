@@ -1,7 +1,6 @@
-import React, { useContext, useEffect, useState } from 'react'
+import { useContext, useEffect, useState } from 'react'
 import {useParams} from "react-router-dom"
 import { ShopContext } from '../context/ShopContext'
-import {assets} from "../assets/asset.js"
 import Related from '../components/Related.js'
 
 const Product = () => {

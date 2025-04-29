@@ -13,7 +13,7 @@ import Header from "./components/Header"
 import Footer from "./components/Footer"
 import ScrollToTop from "./components/ScrollToTop"
 import SearchBar from "./components/SearchBar"
-import { ToastContainer, toast } from 'react-toastify';
+import { ToastContainer } from 'react-toastify';
 
 function App() {
   
